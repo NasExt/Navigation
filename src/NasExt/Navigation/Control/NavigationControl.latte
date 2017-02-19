@@ -1,0 +1,29 @@
+<ul class="nav nav-list">
+    {block navItems}
+        {foreach $navigation as $name => $item}
+            <li n:ifcontent n:class="
+            $item->hashChild() == FALSE ? ($item->isCurrent() ? active) : (array_key_exists($name, $parentsOfCurrentNode) ? ' active open' : ($item->isCurrent() ? open)), 'levl-'.$item->getLevel()"
+                nas-navigation-name="{$name}">
+
+                {if $item->hashChild() == FALSE}
+                    {if $item->isPresenterLink()}
+                        <a href="{plink $item->getLink(), (expand)$item->getLinkArgs()}">{$item->getTitle()}</a>
+                    {else}
+                        <a href="{$item->getLink()}" {$item->getAttributes()|noescape}>{$item->getTitle()}</a>
+                    {/if}
+                {else}
+                    {capture $submenu}
+                        <ul n:ifcontent class="submenu">
+                            {include navItems, navigation => $item->getChild()}
+                        </ul>
+                    {/capture}
+
+                    {if $submenu != ''}
+                        <a href="#" class="dropdown-toggle">{$item->getTitle()}</a>
+                        {$submenu|noescape}
+                    {/if}
+                {/if}
+            </li>
+        {/foreach}
+    {/block}
+</ul>

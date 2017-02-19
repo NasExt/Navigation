@@ -1,0 +1,25 @@
+{
+    "name": "nasext/navigation",
+    "type": "library",
+    "description": "Navigation container and control for Nette Framework",
+    "keywords": ["nette", "nasext", "Navigation"],
+    "license": ["MIT"],
+    "authors": [
+        {
+            "name": "Dusan Hudak"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "nette/utils": "^2.4",
+        "nette/application": "^2.4",
+        "arachne/service-collections": "^0.1.0",
+        "nette/di": "^2.4",
+        "latte/latte": "~2.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "NasExt\\Navigation\\": "src/"
+        }
+    }
+}
