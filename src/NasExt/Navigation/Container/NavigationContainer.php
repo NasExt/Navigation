@@ -10,7 +10,7 @@ namespace NasExt\Navigation\Container;
 
 use Nette\SmartObject;
 
-class Container {
+class NavigationContainer {
 
 	use SmartObject;
 	const ADMIN_BASE = 'baseAdmin';

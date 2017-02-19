@@ -8,13 +8,13 @@
 
 namespace NasExt\Navigation\DI;
 
-use NasExt\Navigation\Container\Container;
+use NasExt\Navigation\Container\NavigationContainer;
 
 interface INavigation {
 
 	/**
-	 * @param Container $navigationContainer
+	 * @param NavigationContainer $navigationContainer
 	 * @return void
 	 */
-	public function setNavigation(Container $navigationContainer);
+	public function setNavigation(NavigationContainer $navigationContainer);
 }

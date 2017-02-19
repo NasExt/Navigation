@@ -8,7 +8,7 @@
 
 namespace NasExt\Navigation\DI;
 
-use NasExt\Navigation\Container\Container;
+use NasExt\Navigation\Container\NavigationContainer;
 use Nette\Iterators\Mapper;
 use Nette\Object;
 
@@ -25,10 +25,10 @@ class NavigationFactory extends Object {
 	}
 
 	/**
-	 * @return Container
+	 * @return NavigationContainer
 	 */
 	public function create() {
-		$navigationContainer = new Container();
+		$navigationContainer = new NavigationContainer();
 
 		foreach ($this->navigationResolver as $item) {
 			$item->setNavigation($navigationContainer);
