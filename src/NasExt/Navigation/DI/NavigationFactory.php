@@ -10,9 +10,11 @@ namespace NasExt\Navigation\DI;
 
 use NasExt\Navigation\Container\NavigationContainer;
 use Nette\Iterators\Mapper;
-use Nette\Object;
+use Nette\SmartObject;
 
-class NavigationFactory extends Object {
+class NavigationFactory  {
+
+	use SmartObject;
 
 	/** @var INavigation[] */
 	protected $navigationResolver;
